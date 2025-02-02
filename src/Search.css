@@ -1,0 +1,222 @@
+/* File: styles/Search.css */
+.search-container {
+  font-family: "Poppins", sans-serif;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle:checked ~ .navbar {
+  transform: translateX(0);
+}
+
+.menu-toggle:checked ~ .menu-overlay {
+  display: block;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(180deg, #4CAF50, #2E7D32);
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.menu-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  background: none;
+  color: white;
+  font-size: 1.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.menu-dropdown button {
+  background: none;
+  color: white;
+  border: none;
+  text-align: left;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.menu-dropdown button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.welcome-message {
+  margin-bottom: 2rem;
+}
+
+.search-content {
+  max-width: 1100px;
+  width: 95%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow-y: auto;
+  flex-grow: 1;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.search-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #2E7D32;
+  text-align: center;
+}
+
+.search-instructions {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.search-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-dropdown {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-button {
+  padding: 0.8rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-button:hover {
+  background: #388E3C;
+}
+
+.dog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.dog-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dog-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.dog-details {
+  margin-top: 0.5rem;
+  color: #2E7D32;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.dog-name, .dog-breed, .dog-age {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.favorite-button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: #FF9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.favorite-button:hover {
+  background: #FB8C00;
+}
+
+.loading-text {
+  color: #333;
+  text-align: center;
+  font-style: italic;
+}
+
+.error-text {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
