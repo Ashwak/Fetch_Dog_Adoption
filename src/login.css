@@ -12,11 +12,17 @@
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Poppins', sans-serif;
+  padding-top: -20px; /* Add this to adjust upward movement */
+  box-sizing: border-box;
 }
 
 .logo {
   margin-bottom: 2rem;
   text-align: center;
+  position: relative; /* Ensure the logo position can be adjusted */
+  margin-top: -80px; /* Move the logo upward */
+  text-align: center; /* Center the logo */
+  z-index: 10; /* Ensure it stays above other elements */
 }
 
 .logo h1 {
@@ -45,12 +51,13 @@
 
 .login-card {
   background: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-  width: 100%;
+  width: 80%;
   max-width: 400px;
   text-align: center;
+  margin-top: -50px; /* Use a negative margin if you need finer control */
 }
 
 .login-title {
