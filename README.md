@@ -63,15 +63,15 @@ The application includes a side navigation pane accessible via a menu button (â˜
 
 The menu expands/collapses and contains:
 
--Search (Dog search page)
+ - Search (Dog search page)
 
--Favorites (Saved favorite dogs)
+ - Favorites (Saved favorite dogs)
 
--Find Match (Navigate to match page)
+ - Find Match (Navigate to match page)
 
--Logout (Returns to the login screen)
+ - Logout (Returns to the login screen)
 
--The side pane automatically collapses when the mouse leaves the area.
+ - The side pane automatically collapses when the mouse leaves the area.
 
 
 ## **Navigation Flow & Page Transitions**
