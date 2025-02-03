@@ -83,7 +83,7 @@
   left: 1rem;
   z-index: 200;
   background: none;
-  color: #4CAF50; /* Set the menu label color to green */
+  color: #09480c; /* Set the menu label color to green */
   font-size: 2rem;
   border: none;
   cursor: pointer;
@@ -91,5 +91,5 @@
 }
 
 .menu-button:hover {
-  color: #388E3C; /* Darker green for hover effect */
+  color: #18911e; /* Darker green for hover effect */
 }

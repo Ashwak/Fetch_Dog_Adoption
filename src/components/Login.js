@@ -28,7 +28,7 @@ const Login = () => {
         <h1>
           <span className="logo-main">Pawfect</span>
           <span className="logo-companion">Companion</span>
-          <span className="logo-paw">🐾</span>
+          <span className="logo-paw">🐕</span>
         </h1>
       </div>
       <div className="login-card">

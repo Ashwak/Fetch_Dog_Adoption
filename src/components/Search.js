@@ -9,7 +9,7 @@ const Search = ({ setFavorites }) => {
   const [dogs, setDogs] = useState([]);
   const [favorites, setLocalFavorites] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("");
-  const [backgroundImage, setBackgroundImage] = useState("https://betterpet.com/wp-content/uploads/2022/07/havanese.jpg");
+  const [backgroundImage, setBackgroundImage] = useState("https://wallpapercave.com/wp/wp14388034.jpg");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const Search = ({ setFavorites }) => {
           { withCredentials: true }
         );
         setDogs(dogDetails.data);
-        setBackgroundImage(`https://betterpet.com/wp-content/uploads/2022/07/havanese.jpg`);
+        setBackgroundImage("https://wallpapercave.com/wp/wp14388034.jpg");
       })
       .catch((error) => setError("Failed to fetch dogs. Please try again."))
       .finally(() => setLoading(false));
@@ -49,14 +49,12 @@ const Search = ({ setFavorites }) => {
     const isFavorite = favorites.some((fav) => fav.id === dog.id);
 
     if (isFavorite) {
-      // Remove from favorites
       const updatedFavorites = favorites.filter((fav) => fav.id !== dog.id);
       setLocalFavorites(updatedFavorites);
       if (typeof setFavorites === "function") {
         setFavorites(updatedFavorites);
       }
     } else {
-      // Add to favorites
       const updatedFavorites = [...favorites, dog];
       setLocalFavorites(updatedFavorites);
       if (typeof setFavorites === "function") {
@@ -95,7 +93,7 @@ const Search = ({ setFavorites }) => {
       <label htmlFor="menu-toggle" id="menu-label" className="menu-button">
         ☰
       </label>
-      <nav className="navbar" onMouseLeave={handleMouseLeave}>
+      <nav className="navbar full-screen" onMouseLeave={handleMouseLeave}>
         <div className="menu-dropdown">
           <button onClick={() => navigate("/search")}>Search</button>
           <button onClick={() => navigate("/favorites")}>Favorites</button>
@@ -105,7 +103,7 @@ const Search = ({ setFavorites }) => {
       </nav>
       <div className="overlay">
         <div className="welcome-message">
-          <h2>Welcome to the Dog Adoption Platform!</h2>
+          <h2>Welcome to the Pawfect Companion, a Dog Adoption Platform!</h2>
           <p>Find your perfect companion today.</p>
         </div>
         <div className="search-content">

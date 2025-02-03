@@ -52,7 +52,7 @@
   left: 1rem;
   z-index: 200;
   background: none;
-  color: white;
+  color: rgb(6, 114, 14);
   font-size: 1.8rem;
   border: none;
   cursor: pointer;
@@ -81,8 +81,8 @@
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(0, 0, 0, 0);
+  color: rgb(21, 59, 4);
   width: 100%;
   padding: 2rem;
   text-align: center;
@@ -95,9 +95,9 @@
 
 .search-content {
   max-width: 1100px;
-  width: 95%;
+  width: 100%;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
   margin: 0 auto;
   overflow-y: auto;
@@ -109,7 +109,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1.5rem;
-  color: #2E7D32;
+  color: #246d27;
   text-align: center;
 }
 
@@ -130,7 +130,7 @@
 
 .search-dropdown {
   padding: 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0a984a;
   border-radius: 5px;
   font-size: 1.1rem;
   width: 100%;
@@ -139,7 +139,7 @@
 
 .search-button {
   padding: 0.8rem;
-  background: #4CAF50;
+  background: #1c9a20;
   color: white;
   border: none;
   border-radius: 5px;
@@ -149,7 +149,7 @@
 }
 
 .search-button:hover {
-  background: #388E3C;
+  background: #055c09;
 }
 
 .dog-list {
@@ -161,7 +161,7 @@
 
 .dog-card {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid #0f6719;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.9);
   text-align: center;
@@ -196,7 +196,7 @@
 .favorite-button {
   margin-top: 1rem;
   padding: 0.5rem;
-  background: #FF9800;
+  background: #50e08a;
   color: white;
   border: none;
   border-radius: 5px;
@@ -206,7 +206,7 @@
 }
 
 .favorite-button:hover {
-  background: #FB8C00;
+  background: #067138;
 }
 
 .loading-text {
