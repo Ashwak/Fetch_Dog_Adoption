@@ -2,21 +2,19 @@
 
 **Tech Stack**
 
-**The Dog Adoption Web Application is built using the following technologies:**
+  Frontend: React.js (with Hooks)
 
-Frontend: React.js (with Hooks)
+  Styling: CSS3 (with custom styles and animations)
 
-Styling: CSS3 (with custom styles and animations)
+  HTTP Client: Axios
 
-HTTP Client: Axios
+  Routing: React Router DOM
 
-Routing: React Router DOM
+  State Management: useState, useEffect (React Hooks)
 
-State Management: useState, useEffect (React Hooks)
+  API Communication: Fetch API with authentication
 
-API Communication: Fetch API with authentication
-
-Deployment :  Netlify
+  Deployment :  Netlify
 
 **Features**
 
