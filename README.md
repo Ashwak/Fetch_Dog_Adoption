@@ -1,6 +1,6 @@
-**Project Documentation: Pwfect Companion Web Application**
+### **Project Documentation: Pawfect Companion Web Application**
 
-**Tech Stack**
+## **Tech Stack**
 
  - Frontend: React.js (with Hooks)
 
@@ -16,7 +16,7 @@
 
   -Deployment :  Netlify
 
-**Features**
+## **Features**
 
 **1. User Authentication**
 
@@ -74,7 +74,7 @@ The menu expands/collapses and contains:
 -The side pane automatically collapses when the mouse leaves the area.
 
 
-**Navigation Flow & Page Transitions**
+## **Navigation Flow & Page Transitions**
 
 **1. Login Page → Search Page**
 
@@ -109,7 +109,7 @@ The app follows best coding practices, accessibility standards, and efficient AP
 
 --------------------------------------------------------------------------------------------------------
 
-**Setup Guide: Running the Dog Adoption Web Application Locally**
+### **Setup Guide: Running the Dog Adoption Web Application Locally**
 
 ---
 
