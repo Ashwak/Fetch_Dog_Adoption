@@ -1,4 +1,112 @@
+**Project Documentation: Pwfect Companion Web Application**
 
+**Tech Stack**
+
+**The Dog Adoption Web Application is built using the following technologies:**
+
+Frontend: React.js (with Hooks)
+
+Styling: CSS3 (with custom styles and animations)
+
+HTTP Client: Axios
+
+Routing: React Router DOM
+
+State Management: useState, useEffect (React Hooks)
+
+API Communication: Fetch API with authentication
+
+Deployment :  Netlify
+
+**Features**
+
+**1. User Authentication**
+
+Users enter their Name and Email on the login page.
+
+The app sends authentication data to the API and receives an authentication token.
+
+Once authenticated, users are redirected to the Search Page.
+
+**2. Dog Search & Filtering**
+
+Users can search for dogs by selecting a breed from a dropdown menu.
+
+Clicking the Search button fetches a list of dogs based on the selected breed.
+
+Each dog card displays:
+
+Dog Image
+
+Name, Breed, and Age
+
+A Favorite button to add/remove the dog from favorites.
+
+
+**3. Favorites Management**
+
+Users can favorite/unfavorite a dog.
+
+Favorited dogs are listed in the Favorites Page.
+
+Clicking the Find Match button initiates the match process.
+
+**4. Finding the Perfect Match**
+
+The Match Page selects the best match from the user’s favorites.
+
+The matched dog’s details (image, breed, location) are displayed.
+
+If no favorites are selected, the page prompts the user to add favorites.
+
+**5. Navigation & Side Menu**
+
+The application includes a side navigation pane accessible via a menu button (☰).
+
+The menu expands/collapses and contains:
+
+Search (Dog search page)
+
+Favorites (Saved favorite dogs)
+
+Find Match (Navigate to match page)
+
+Logout (Returns to the login screen)
+
+The side pane automatically collapses when the mouse leaves the area.
+
+
+**Navigation Flow & Page Transitions**
+
+**1. Login Page → Search Page**
+
+User logs in → App authenticates → Redirects to Search Page
+
+**2. Search Page → Favorites Page**
+
+User searches for dogs → Clicks Favorite button → Navigates to Favorites Page
+
+**3. Favorites Page → Match Page**
+
+User selects favorite dogs → Clicks Find Match → Redirects to Match Page
+
+**4. Side Menu Navigation**
+
+Menu (☰) opens side pane → User selects Search, Favorites, Match, or Logout
+
+Menu auto-collapses when the mouse leaves the area.
+
+**5. Logout → Back to Login Page**
+
+Clicking Logout clears authentication and redirects to Login Page.
+
+
+
+All pages maintain authentication (protected routes using withCredentials: true).
+
+The UI is designed to be intuitive, user-friendly, and visually appealing.
+
+The app follows best coding practices, accessibility standards, and efficient API handling.
 
 
 # Getting Started with Create React App
