@@ -24,8 +24,15 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <div className="logo">
+        <h1>
+          <span className="logo-main">Pawfect</span>
+          <span className="logo-companion">Companion</span>
+          <span className="logo-paw">🐾</span>
+        </h1>
+      </div>
       <div className="login-card">
-        <h2 className="login-title">Welcome to Dog Adoption</h2>
+        <h2 className="login-title">Welcome to Pawfect Companion</h2>
         <form onSubmit={handleLogin} className="login-form">
           <label className="login-label">Name</label>
           <input 

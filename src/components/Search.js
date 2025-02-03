@@ -1,3 +1,4 @@
+/* File: components/Search.js */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Search.css";
@@ -8,7 +9,7 @@ const Search = ({ setFavorites }) => {
   const [dogs, setDogs] = useState([]);
   const [favorites, setLocalFavorites] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("");
-  const [backgroundImage, setBackgroundImage] = useState("https://source.unsplash.com/1600x900/?puppy");
+  const [backgroundImage, setBackgroundImage] = useState("https://betterpet.com/wp-content/uploads/2022/07/havanese.jpg");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ const Search = ({ setFavorites }) => {
           { withCredentials: true }
         );
         setDogs(dogDetails.data);
-        setBackgroundImage(`https://source.unsplash.com/1600x900/?${selectedBreed || "dog"}`);
+        setBackgroundImage(`https://betterpet.com/wp-content/uploads/2022/07/havanese.jpg`);
       })
       .catch((error) => setError("Failed to fetch dogs. Please try again."))
       .finally(() => setLoading(false));
@@ -64,16 +65,37 @@ const Search = ({ setFavorites }) => {
     }
   };
 
+  const collapseMenu = (e) => {
+    const menuToggle = document.getElementById("menu-toggle");
+    if (
+      menuToggle &&
+      menuToggle.checked &&
+      e.target.id !== "menu-toggle" &&
+      e.target.id !== "menu-label" &&
+      !e.target.closest(".navbar")
+    ) {
+      menuToggle.checked = false;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    if (menuToggle && menuToggle.checked) {
+      menuToggle.checked = false;
+    }
+  };
+
   return (
     <div
       className="search-container"
       style={{ backgroundImage: `url(${backgroundImage})` }}
+      onClick={collapseMenu}
     >
       <input type="checkbox" id="menu-toggle" className="menu-toggle" />
       <label htmlFor="menu-toggle" id="menu-label" className="menu-button">
         ☰
       </label>
-      <nav className="navbar">
+      <nav className="navbar" onMouseLeave={handleMouseLeave}>
         <div className="menu-dropdown">
           <button onClick={() => navigate("/search")}>Search</button>
           <button onClick={() => navigate("/favorites")}>Favorites</button>
