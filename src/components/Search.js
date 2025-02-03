@@ -1,4 +1,3 @@
-/* File: components/Search.js */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Search.css";
@@ -7,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Search = ({ setFavorites }) => {
   const [breeds, setBreeds] = useState([]);
   const [dogs, setDogs] = useState([]);
+  const [favorites, setLocalFavorites] = useState([]);
   const [selectedBreed, setSelectedBreed] = useState("");
   const [backgroundImage, setBackgroundImage] = useState("https://source.unsplash.com/1600x900/?puppy");
   const [loading, setLoading] = useState(false);
@@ -38,37 +38,29 @@ const Search = ({ setFavorites }) => {
           { withCredentials: true }
         );
         setDogs(dogDetails.data);
-        setBackgroundImage(`https://source.unsplash.com/1600x900/?${selectedBreed || 'dog'}`);
+        setBackgroundImage(`https://source.unsplash.com/1600x900/?${selectedBreed || "dog"}`);
       })
       .catch((error) => setError("Failed to fetch dogs. Please try again."))
       .finally(() => setLoading(false));
   };
 
-  const addFavorite = (dog) => {
-    if (typeof setFavorites === "function") {
-      setFavorites((prevFavorites) => [...prevFavorites, dog]);
+  const toggleFavorite = (dog) => {
+    const isFavorite = favorites.some((fav) => fav.id === dog.id);
+
+    if (isFavorite) {
+      // Remove from favorites
+      const updatedFavorites = favorites.filter((fav) => fav.id !== dog.id);
+      setLocalFavorites(updatedFavorites);
+      if (typeof setFavorites === "function") {
+        setFavorites(updatedFavorites);
+      }
     } else {
-      console.error("setFavorites is not a function");
-    }
-  };
-
-  const toggleMenu = () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    if (menuToggle) {
-      menuToggle.checked = !menuToggle.checked;
-    }
-  };
-
-  const collapseMenu = (e) => {
-    const menuToggle = document.getElementById("menu-toggle");
-    if (
-      menuToggle &&
-      menuToggle.checked &&
-      e.target.id !== "menu-toggle" &&
-      e.target.id !== "menu-label" &&
-      !e.target.closest(".navbar")
-    ) {
-      menuToggle.checked = false;
+      // Add to favorites
+      const updatedFavorites = [...favorites, dog];
+      setLocalFavorites(updatedFavorites);
+      if (typeof setFavorites === "function") {
+        setFavorites(updatedFavorites);
+      }
     }
   };
 
@@ -76,13 +68,11 @@ const Search = ({ setFavorites }) => {
     <div
       className="search-container"
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      onClick={collapseMenu}
     >
       <input type="checkbox" id="menu-toggle" className="menu-toggle" />
       <label htmlFor="menu-toggle" id="menu-label" className="menu-button">
         ☰
       </label>
-      <div className="menu-overlay" onClick={collapseMenu}></div>
       <nav className="navbar">
         <div className="menu-dropdown">
           <button onClick={() => navigate("/search")}>Search</button>
@@ -98,7 +88,6 @@ const Search = ({ setFavorites }) => {
         </div>
         <div className="search-content">
           <h2 className="search-title">Search Dogs</h2>
-          <p className="search-instructions">Choose a breed to find your next furry friend!</p>
           <div className="search-controls">
             <select
               value={selectedBreed}
@@ -128,10 +117,12 @@ const Search = ({ setFavorites }) => {
                   <p className="dog-age">Age: {dog.age}</p>
                 </div>
                 <button
-                  onClick={() => addFavorite(dog)}
-                  className="favorite-button"
+                  onClick={() => toggleFavorite(dog)}
+                  className={`favorite-button ${
+                    favorites.some((fav) => fav.id === dog.id) ? "unfavorite" : ""
+                  }`}
                 >
-                  Favorite
+                  {favorites.some((fav) => fav.id === dog.id) ? "Unfavorite" : "Favorite"}
                 </button>
               </div>
             ))}
@@ -143,4 +134,3 @@ const Search = ({ setFavorites }) => {
 };
 
 export default Search;
-
