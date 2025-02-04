@@ -99,7 +99,25 @@ Menu auto-collapses when the mouse leaves the area.
 Clicking Logout clears authentication and redirects to Login Page.
 
 ---
+## **Functionalities**
+---
+**Handling "All" Option**
 
+- When users select "All," the application fetches and displays dogs from all available breeds.
+- Uses efficient API calls to fetch dogs for all breeds and aggregates results.
+- Improved Sorting
+- Sorts results alphabetically by breed.
+- Users can toggle between ascending and descending order dynamically.
+
+**Enhanced Pagination**
+- Displays a maximum of 3 pages at a time for better navigation.
+- Handles dynamic page ranges and enables users to navigate through long result sets efficiently.
+
+**Error Resilience**
+- Handles API failures gracefully with clear and actionable error messages.
+- Improves user experience by preventing crashes or hanging UI when API requests fail.
+
+---
 All pages maintain authentication (protected routes using withCredentials: true).
 
 The UI is designed to be intuitive, user-friendly, and visually appealing.
